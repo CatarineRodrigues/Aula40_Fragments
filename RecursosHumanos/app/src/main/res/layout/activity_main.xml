@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/tvInformacoes"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
-        android:text="Hello World!"
+        android:text="@string/mensagem"
         android:textSize="@dimen/fonte_12"
         app:layout_constraintBottom_toTopOf="@+id/container"
         app:layout_constraintEnd_toEndOf="parent"
