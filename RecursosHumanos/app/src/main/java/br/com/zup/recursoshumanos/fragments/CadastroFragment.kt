@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import br.com.zup.recursoshumanos.FragmentoClick
 import br.com.zup.recursoshumanos.main.MainActivity
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
@@ -31,12 +32,12 @@ class CadastroFragment : Fragment() {
         super.onAttach(context)
         try {
             interfaceClick = context as MainActivity
-        } catch (e: Exception){
+        } catch (e: Exception) {
             Log.i("Erro", "Erro na inicialização da interface ${e.message}")
         }
     }
 
-    private fun recuperarDados(){
+    private fun recuperarDados() {
         this.nome = binding.etNome.text.toString()
         this.horasTrabalhadas = binding.etHorasTrabalhadas.text.toString()
         this.valorHora = binding.etValorHora.text.toString()
@@ -46,7 +47,19 @@ class CadastroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCalcularSalario.setOnClickListener {
             recuperarDados()
-            interfaceClick.clickFragmento(nome, horasTrabalhadas.toInt(), valorHora.toDouble())
+            if (!verificarCampos()) {
+                interfaceClick.clickFragmento(nome, horasTrabalhadas.toInt(), valorHora.toDouble())
+            }
+        }
+    }
+
+    fun verificarCampos(): Boolean {
+        val context = context as MainActivity
+        return if (nome.isEmpty() || horasTrabalhadas.isEmpty() || valorHora.isEmpty()) {
+            Toast.makeText(context, "Preencha os campos", Toast.LENGTH_LONG).show()
+            true
+        } else {
+            false
         }
     }
 }
