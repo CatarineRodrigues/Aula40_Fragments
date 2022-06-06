@@ -6,14 +6,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.zup.recursoshumanos.R
+import br.com.zup.recursoshumanos.databinding.FragmentSalarioBinding
+import br.com.zup.recursoshumanos.model.Funcionario
 
 class SalarioFragment : Fragment() {
+    private lateinit var binding: FragmentSalarioBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_salario, container, false)
+        binding = FragmentSalarioBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val funcionarioCadastrado = arguments?.getParcelable<Funcionario>("Funcionario")
+        if (funcionarioCadastrado != null){
+            binding.tvNome.text = funcionarioCadastrado.getNome()
+            binding.tvHorasTrabalhadas.text = funcionarioCadastrado.getHorasTrabalhadas().toString()
+            binding.tvValorHora.text = funcionarioCadastrado.getValorHora().toString()
+            binding.tvValorSalario.text = funcionarioCadastrado.getValorSalario().toString()
+        }
+    }
+//TODO fun exibit dados
 }

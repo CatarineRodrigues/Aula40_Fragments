@@ -9,11 +9,11 @@ class Funcionario(
     private var horasTrabalhadas: Int,
     private var valorHora: Double
 ) : Parcelable {
-//    private var valorSalário = horasTrabalhadas*valorHora
+    private var valorSalário = horasTrabalhadas*valorHora
 
     fun getNome() = this.nome
     fun getHorasTrabalhadas() = this.horasTrabalhadas
     fun getValorHora() = this.valorHora
-//    fun getValorSalario() = this.valorSalário
+    fun getValorSalario() = this.valorSalário
 //    TODO perguntar se pode ser feito dessa forma o cálculo, ou se da exception
 }

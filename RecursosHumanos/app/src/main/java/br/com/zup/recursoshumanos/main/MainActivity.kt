@@ -6,6 +6,7 @@ import br.com.zup.recursoshumanos.FragmentoClick
 import br.com.zup.recursoshumanos.databinding.ActivityMainBinding
 import br.com.zup.recursoshumanos.fragments.CadastroFragment
 import br.com.zup.recursoshumanos.fragments.SalarioFragment
+import br.com.zup.recursoshumanos.model.Funcionario
 
 class MainActivity : AppCompatActivity(), FragmentoClick {
     private lateinit var binding: ActivityMainBinding
@@ -22,9 +23,17 @@ class MainActivity : AppCompatActivity(), FragmentoClick {
     }
 
     override fun clickFragmento(nome: String, hora: Int, valor: Double) {
+        val funcionario = Funcionario(nome,hora,valor)
+
+        val fragmentSalario = SalarioFragment ().apply {
+            arguments = Bundle().apply {
+                putParcelable("Funcionario", funcionario)
+            }
+        }
+
         supportFragmentManager
             .beginTransaction()
-            .add(binding.container.id, SalarioFragment())
+            .add(binding.container.id, fragmentSalario)
             .addToBackStack("Cadastro")
             .commit()
     }
