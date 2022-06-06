@@ -5,6 +5,7 @@ import android.os.Bundle
 import br.com.zup.recursoshumanos.databinding.ActivityMainBinding
 import br.com.zup.recursoshumanos.fragments.CadastroFragment
 import br.com.zup.recursoshumanos.fragments.FragmentoClick
+import br.com.zup.recursoshumanos.fragments.SalarioFragment
 
 class MainActivity : AppCompatActivity(), FragmentoClick {
     private lateinit var binding: ActivityMainBinding
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity(), FragmentoClick {
     override fun clickFragmento() {
         supportFragmentManager
             .beginTransaction()
-            .add(binding.container.id, CadastroFragment())
+            .add(binding.container.id, SalarioFragment())
             .addToBackStack("Cadastro")
             .commit()
     }

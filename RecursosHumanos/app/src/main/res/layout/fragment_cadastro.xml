@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.CadastroFragment"
-    android:background="@color/silver"
-    android:layout_margin="@dimen/margem_16">
+    android:background="@color/silver">
 
     <TextView
         android:id="@+id/tv_TituloCadastro"
