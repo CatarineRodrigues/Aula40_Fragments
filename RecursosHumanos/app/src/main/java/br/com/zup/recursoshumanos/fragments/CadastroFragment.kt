@@ -10,10 +10,14 @@ import android.view.ViewGroup
 import br.com.zup.recursoshumanos.FragmentoClick
 import br.com.zup.recursoshumanos.main.MainActivity
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
+import kotlin.properties.Delegates
 
 class CadastroFragment : Fragment() {
     private lateinit var binding: FragmentCadastroBinding
     private lateinit var interfaceClick: FragmentoClick
+    private lateinit var nome: String
+    private lateinit var horasTrabalhadas: String
+    private lateinit var valorHora: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +36,17 @@ class CadastroFragment : Fragment() {
         }
     }
 
+    private fun recuperarDados(){
+        this.nome = binding.etNome.text.toString()
+        this.horasTrabalhadas = binding.etHorasTrabalhadas.text.toString()
+        this.valorHora = binding.etValorHora.text.toString()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCalcularSalario.setOnClickListener {
-            interfaceClick.clickFragmento()
+            recuperarDados()
+            interfaceClick.clickFragmento(nome, horasTrabalhadas.toInt(), valorHora.toDouble())
         }
     }
 }

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), FragmentoClick {
             .commit()
     }
 
-    override fun clickFragmento() {
+    override fun clickFragmento(nome: String, hora: Int, valor: Double) {
         supportFragmentManager
             .beginTransaction()
             .add(binding.container.id, SalarioFragment())
