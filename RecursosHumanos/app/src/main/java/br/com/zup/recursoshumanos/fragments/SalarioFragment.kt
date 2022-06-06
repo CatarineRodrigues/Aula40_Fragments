@@ -25,11 +25,14 @@ class SalarioFragment : Fragment() {
 
         val funcionarioCadastrado = arguments?.getParcelable<Funcionario>("Funcionario")
         if (funcionarioCadastrado != null){
-            binding.tvNome.text = funcionarioCadastrado.getNome()
-            binding.tvHorasTrabalhadas.text = funcionarioCadastrado.getHorasTrabalhadas().toString()
-            binding.tvValorHora.text = funcionarioCadastrado.getValorHora().toString()
-            binding.tvValorSalario.text = funcionarioCadastrado.getValorSalario().toString()
+            exibirDados(funcionarioCadastrado)
         }
     }
-//TODO fun exibit dados
+
+    private fun exibirDados(funcionario: Funcionario){
+        binding.tvNome.text = funcionario.getNome()
+        binding.tvHorasTrabalhadas.text = "Horas Trabalhadas: ${funcionario.getHorasTrabalhadas()}h"
+        binding.tvValorHora.text = "Valor por hora: R$ ${funcionario.getValorHora()}"
+        binding.tvValorSalario.text = "Salário a receber: R$ ${funcionario.getValorSalario()}"
+    }
 }
