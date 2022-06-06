@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.fragments
+package br.com.zup.recursoshumanos
 
 interface FragmentoClick {
     fun clickFragmento()

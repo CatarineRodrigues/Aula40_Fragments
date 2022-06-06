@@ -1,10 +1,10 @@
-package br.com.zup.recursoshumanos
+package br.com.zup.recursoshumanos.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.zup.recursoshumanos.FragmentoClick
 import br.com.zup.recursoshumanos.databinding.ActivityMainBinding
 import br.com.zup.recursoshumanos.fragments.CadastroFragment
-import br.com.zup.recursoshumanos.fragments.FragmentoClick
 import br.com.zup.recursoshumanos.fragments.SalarioFragment
 
 class MainActivity : AppCompatActivity(), FragmentoClick {

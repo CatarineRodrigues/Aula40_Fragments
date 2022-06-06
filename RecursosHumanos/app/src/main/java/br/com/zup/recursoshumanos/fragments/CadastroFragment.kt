@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.zup.recursoshumanos.MainActivity
-import br.com.zup.recursoshumanos.R
+import br.com.zup.recursoshumanos.FragmentoClick
+import br.com.zup.recursoshumanos.main.MainActivity
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
 
 class CadastroFragment : Fragment() {
