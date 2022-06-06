@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.recursoshumanos.databinding.ActivityMainBinding
 import br.com.zup.recursoshumanos.fragments.CadastroFragment
+import br.com.zup.recursoshumanos.fragments.FragmentoClick
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentoClick {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,14 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .add(binding.container.id, CadastroFragment())
+            .commit()
+    }
+
+    override fun clickFragmento() {
+        supportFragmentManager
+            .beginTransaction()
+            .add(binding.container.id, CadastroFragment())
+            .addToBackStack("Cadastro")
             .commit()
     }
 }
