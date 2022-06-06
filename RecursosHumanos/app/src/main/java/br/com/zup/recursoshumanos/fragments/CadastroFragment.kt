@@ -49,6 +49,7 @@ class CadastroFragment : Fragment() {
             recuperarDados()
             if (!verificarCampos()) {
                 interfaceClick.clickFragmento(nome, horasTrabalhadas.toInt(), valorHora.toDouble())
+                limparCampos()
             }
         }
     }
@@ -61,5 +62,11 @@ class CadastroFragment : Fragment() {
         } else {
             false
         }
+    }
+
+    private fun limparCampos() {
+        binding.etNome.text.clear()
+        binding.etHorasTrabalhadas.text.clear()
+        binding.etValorHora.text.clear()
     }
 }
