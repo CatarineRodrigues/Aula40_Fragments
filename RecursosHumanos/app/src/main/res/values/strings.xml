@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Recursos Humanos</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mensagem">Esse é o nosso aplicativos de cadastro de funcionaries, aqui vamos cadastrar as informações e calcular o salário do funcionárie.</string>
+    <string name="nome_e_sobrenome">Nome e sobrenome</string>
+    <string name="horas_trabalhadas">Horas trabalhadas</string>
+    <string name="valor_por_hora">Valor por hora</string>
+    <string name="btn_calcular_salario">Calcular Salário</string>
+    <string name="descricao_imagem">Silhueta de um avatar, cabeça e tronco</string>
+    <string name="salario_a_receber">Salário a Receber</string>
+    <string name="cadastro_de_informacoes">Cadastro de informações</string>
 </resources>
